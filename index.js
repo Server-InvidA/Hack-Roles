@@ -101,6 +101,6 @@ bot.on('message', message => {
 			.addField("V.I.P+", "Youtuber")
 		channel.message.send(gradesEmbed)
 	}*/
-});
+})
 
 bot.login(process.env.TOKEN);

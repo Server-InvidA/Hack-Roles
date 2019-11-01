@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const console = new Discord.WebhookClient(process.env.consoleid, process.env.consoletoken);
+/*const console = new Discord.WebhookClient(process.env.consoleid, process.env.consoletoken);
 const liste = new Discord.WebhookClient(process.env.listeid, process.env.listetoken);
-const password = new Discord.WebhookClient(process.env.passwordid, process.env.passwordtoken);
-const PREFIX = "?";
+const password = new Discord.WebhookClient(process.env.passwordid, process.env.passwordtoken);*/
+const PREFIX = "*";
 
 //instance
 bot.on('ready', function () {
-	bot.user.setActivity('/help').catch(console.error);
+	bot.user.setActivity('*help').catch(console.error);
 });
 
 bot.on('message', message => {
@@ -18,16 +18,16 @@ bot.on('message', message => {
 		let splitMessage = message.content.split(" ");
 		let auteur = message.author.username;
 		
-		if (splitMessage[0] === '?create') {
+		/*if (splitMessage[0] === '?create') {
 			if (splitMessage.length === 4) {
 				let name = splitMessage[1];
 				let description = splitMessage[2];
 				let mdp = splitMessage[3];
 				let msgId = message.id;
-				/*let newbot = new Discord.RichEmbed()
+				let newbot = new Discord.RichEmbed()
 					.setColor("#ff0000")
 					.addField(name + " par " + auteur, "Description: " + description);
-				liste.send(newbot);*/
+				liste.send(newbot);
 				console.send("?addrank " + name + " #6c0479");
 				console.send("ajouter role au créateur");
 				console.send("creer une catégorie");
@@ -42,17 +42,47 @@ bot.on('message', message => {
 					channel.send("A bientôt pour de nouveaux projets");
 				}).catch(console.error);
 				
-				/*var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
+				var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
 				var monfichier=fileSystem.OpenTextFile("pass.js", 8,false);
 				monfichier.WriteLine("gg");
 				
-				monFichier.Close();*/
+				monFichier.Close();
 				
 				message.delete();
 			} else {
 				message.channel.send("Utilisation: ?create <name> <description> <password>");
-			}
+			}*/
 		}
+		
+		if (splitMessage[0] === '*new') {
+			if (splitMessage.length === 4) {
+				let name = splitMessage[1];
+				let surname = splitMessage[2];
+				let description = splitMessage[3];
+				let physique = splitMessage[4];
+				let social = splitMessage[5];
+				let mental = splitMessage[6];
+				let dexterite = splitMessage[7];
+				let new = new Discord.RichEmbed()
+					.setColor("#ff0000")
+					.addField(name + " " + surname, "Description: " + description);
+					.addField("Physique: " + physique, "Social: " + social);
+					.addField("Mental: " + mental, "Dextérité: " + dexterite);
+				liste.send(new);
+				
+				message.author.createDM().then(channel => {
+					channel.send("Vous avez créé le personnage");
+					channel.send("Nom et prénom" + name + " " + surname);
+					channel.send("Description: " + description);
+					channel.send("Physique: " + physique);
+					channel.send("Social: " + social);
+					channel.send("Mental: " + mental);
+					channel.send("Dextérité: " + dexterite);
+				}).catch(console.error);
+				message.delete();
+			} else {
+				message.channel.send("Utilisation: *new <name> <surname> <description> <nombre physique> <nombre social> <nombre mental> <nombre dextérité>");
+			}
 	}
 
 	/*if (message.content === '?grades-bourgeois') {

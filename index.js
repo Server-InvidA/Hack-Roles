@@ -51,8 +51,8 @@ bot.on('message', message => {
 				message.delete();
 			} else {
 				message.channel.send("Utilisation: ?create <name> <description> <password>");
-			}*/
-		}
+			}
+		}*/
 		
 		if (splitMessage[0] === '*new') {
 			if (splitMessage.length === 4) {

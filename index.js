@@ -65,8 +65,8 @@ bot.on('message', message => {
 				let dexterite = splitMessage[7];
 				let newperso = new Discord.RichEmbed()
 					.setColor("#ff0000")
-					.addField(name + " " + surname, "Description: " + description);
-					.addField("Physique: " + physique, "Social: " + social);
+					.addField(name + " " + surname, "Description: " + description)
+					.addField("Physique: " + physique, "Social: " + social)
 					.addField("Mental: " + mental, "Dextérité: " + dexterite);
 				liste.send(newperso);
 				

@@ -63,12 +63,12 @@ bot.on('message', message => {
 				let social = splitMessage[5];
 				let mental = splitMessage[6];
 				let dexterite = splitMessage[7];
-				let new = new Discord.RichEmbed()
+				let newperso = new Discord.RichEmbed()
 					.setColor("#ff0000")
 					.addField(name + " " + surname, "Description: " + description);
 					.addField("Physique: " + physique, "Social: " + social);
 					.addField("Mental: " + mental, "Dextérité: " + dexterite);
-				liste.send(new);
+				liste.send(newperso);
 				
 				message.author.createDM().then(channel => {
 					channel.send("Vous avez créé le personnage");

@@ -83,7 +83,16 @@ bot.on('message', message => {
 			} else {
 				message.channel.send("Utilisation: $new <name> <surname> <description> <nombre physique> <nombre social> <nombre mental> <nombre dextérité>");
 			}
-	}
+		}
+		
+		if (message.content === '$help') {
+			message.channel.send("Liste des commandes du serveur discord")
+			let gradesEmbed = new Discord.RichEmbed()
+				.setColor("#ff0000")
+				.addField("$help : Affiche la liste des commandes du serveur discord", "Utilisation : $help")
+				.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200")
+			message.channel.send(gradesEmbed)
+		}
 	}
 
 	/*if (message.content === '?grades-bourgeois') {

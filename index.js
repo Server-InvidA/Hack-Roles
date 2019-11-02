@@ -92,6 +92,7 @@ bot.on('message', message => {
 				.addField("$help : Affiche la liste des commandes du serveur discord", "Utilisation : $help")
 				.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200");
 			message.channel.send(gradesEmbed);
+			message.delete();
 		}
 	}
 

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-/*const console = new Discord.WebhookClient(process.env.consoleid, process.env.consoletoken);
-const liste = new Discord.WebhookClient(process.env.listeid, process.env.listetoken);
+const persos = new Discord.WebhookClient(process.env.persoid, process.env.persotoken);
+/*const liste = new Discord.WebhookClient(process.env.listeid, process.env.listetoken);
 const password = new Discord.WebhookClient(process.env.passwordid, process.env.passwordtoken);*/
 const PREFIX = "$";
 

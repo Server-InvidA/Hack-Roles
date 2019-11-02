@@ -55,7 +55,7 @@ bot.on('message', message => {
 		}*/
 		
 		if (splitMessage[0] === '$new') {
-			if (splitMessage.length === 4) {
+			if (splitMessage.length === 8) {
 				let name = splitMessage[1];
 				let surname = splitMessage[2];
 				let description = splitMessage[3];
@@ -81,7 +81,7 @@ bot.on('message', message => {
 				}).catch(console.error);
 				message.delete();
 			} else {
-				message.channel.send("Utilisation: *new <name> <surname> <description> <nombre physique> <nombre social> <nombre mental> <nombre dextérité>");
+				message.channel.send("Utilisation: $new <name> <surname> <description> <nombre physique> <nombre social> <nombre mental> <nombre dextérité>");
 			}
 	}
 	}

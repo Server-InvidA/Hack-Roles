@@ -3,11 +3,11 @@ const bot = new Discord.Client();
 /*const console = new Discord.WebhookClient(process.env.consoleid, process.env.consoletoken);
 const liste = new Discord.WebhookClient(process.env.listeid, process.env.listetoken);
 const password = new Discord.WebhookClient(process.env.passwordid, process.env.passwordtoken);*/
-const PREFIX = "*";
+const PREFIX = "$";
 
 //instance
 bot.on('ready', function () {
-	bot.user.setActivity('*help').catch(console.error);
+	bot.user.setActivity('$help').catch(console.error);
 });
 
 bot.on('message', message => {

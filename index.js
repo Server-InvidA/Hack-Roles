@@ -54,7 +54,7 @@ bot.on('message', message => {
 			}
 		}*/
 		
-		if (splitMessage[0] === '*new') {
+		if (splitMessage[0] === '$new') {
 			if (splitMessage.length === 4) {
 				let name = splitMessage[1];
 				let surname = splitMessage[2];

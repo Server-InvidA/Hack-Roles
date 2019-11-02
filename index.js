@@ -84,6 +84,7 @@ bot.on('message', message => {
 				message.channel.send("Utilisation: *new <name> <surname> <description> <nombre physique> <nombre social> <nombre mental> <nombre dextérité>");
 			}
 	}
+	}
 
 	/*if (message.content === '?grades-bourgeois') {
 		Help_BOOK.send("Liste des commandes du serveur discord")

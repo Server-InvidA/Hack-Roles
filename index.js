@@ -68,7 +68,7 @@ bot.on('message', message => {
 					.addField(name + " " + surname, "Description: " + description)
 					.addField("Physique: " + physique, "Social: " + social)
 					.addField("Mental: " + mental, "Dextérité: " + dexterite);
-				message.channel.send(newperso);
+				persos.send(newperso);
 				
 				message.author.createDM().then(channel => {
 					channel.send("Vous avez créé le personnage");

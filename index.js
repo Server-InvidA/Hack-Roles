@@ -114,10 +114,11 @@ bot.on('message', message => {
 	}*/
 });
 
-/*bot.on('messageReactionAdd', (reaction, user) => {
+bot.on('messageReactionAdd', (reaction, user) => {
 	if(reaction.emoji.name === ":arrow_right:") {
-		let role = user.guild.roles.find('name', 'test')
+		let role = reaction.guild.roles.find('name', 'Observateur')
+		reaction.member.addRole(role)
 	}
-});*/
+});
 
 bot.login(process.env.TOKEN);

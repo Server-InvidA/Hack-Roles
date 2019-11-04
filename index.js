@@ -97,11 +97,12 @@ bot.on('message', message => {
 		}
 		
 		if (message.content === '$jet') {
+			let auteur = message.author.username;
 			message.delete();
 			var min=1; 
 			var max=100;  
 			var random = Math.floor(Math.random() * (max - min)) + min; 
-			message.channel.send(random);
+			message.channel.send(auteur + ": " + random);
 		}
 	}
 

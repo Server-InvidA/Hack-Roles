@@ -94,6 +94,14 @@ bot.on('message', message => {
 			message.channel.send(gradesEmbed);
 			message.delete();
 		}
+		
+		if (message.content === '$jet') {
+			var min=1; 
+			var max=100;  
+			var random = Math.floor(Math.random() * (max - min)) + min; 
+			message.channel.send(random);
+			message.delete();
+		}
 	}
 
 	/*if (message.content === '?grades-bourgeois') {

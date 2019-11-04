@@ -90,6 +90,7 @@ bot.on('message', message => {
 			let gradesEmbed = new Discord.RichEmbed()
 				.setColor("#ff0000")
 				.addField("$help : Affiche la liste des commandes du serveur discord", "Utilisation : $help")
+				.addField("$jet : Faire un jet de dés", "Utilisation : $jet")
 				.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200");
 			message.channel.send(gradesEmbed);
 			message.delete();

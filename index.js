@@ -104,6 +104,11 @@ bot.on('message', message => {
 			var random = Math.floor(Math.random() * (max - min)) + min; 
 			message.channel.send(auteur + ": " + random);
 		}
+		
+		if (message.content === '$go') {
+			message.channel.send("https://las-magics.fr/jdr/message.png");
+			message.channel.send("https://las-magics.fr/jdr/carte.png");
+		}
 	}
 
 	/*if (message.content === '?grades-bourgeois') {

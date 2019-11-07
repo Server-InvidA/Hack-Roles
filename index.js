@@ -97,6 +97,21 @@ bot.on('message', message => {
 			message.delete();
 		}
 		
+		if (message.channel.id === '639790587993784340') {
+			if (message.content === '$helpa') {
+				message.channel.send("Liste des commandes du serveur discord");
+				let gradesEmbed = new Discord.RichEmbed()
+					.setColor("#ff0000")
+					.addField("$helpa : Affiche la liste des commandes du serveur discord (commandes admin inclues)", "Utilisation : $help")
+					.addField("$jet : Faire un jet de dés de 100", "Utilisation : $jet")
+					.addField("$jet 10 ou 5 ... : Faire un jet de dés de la valeur que vous voulez", "Utilisation : $jet <nombre maximum>")
+					.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200");
+					.addField("$jet : Lancement du jeu", "Utilisation : $go");
+				message.channel.send(gradesEmbed);
+				message.delete();
+			}
+		}
+		
 		if (splitMessage[0] === '$jet') {
 			if (splitMessage.length === 1) {
 				let auteur = message.author.username;

@@ -91,28 +91,30 @@ bot.on('message', message => {
 				.setColor("#ff0000")
 				.addField("$help : Affiche la liste des commandes du serveur discord", "Utilisation : $help")
 				.addField("$jet : Faire un jet de dés", "Utilisation : $jet")
-				.addField("$jet10 : Faire un jet de dés de 10", "Utilisation : $jet10")
+				.addField("$jet10 : Faire un jet de dés de la valeur que vous voulez", "Utilisation : $jet <nombre maximum>")
 				.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200");
 			message.channel.send(gradesEmbed);
 			message.delete();
 		}
 		
-		if (message.content === '$jet') {
-			let auteur = message.author.username;
-			message.delete();
-			var min=1; 
-			var max=100;  
-			var random = Math.floor(Math.random() * (max - min)) + min; 
-			message.channel.send(auteur + ": " + random);
-		}
-		
-		if (message.content === '$jet10') {
-			let auteur = message.author.username;
-			message.delete();
-			var min=0; 
-			var max=10;  
-			var random = Math.floor(Math.random() * (max - min)) + min; 
-			message.channel.send(auteur + ": " + random);
+		if (splitMessage[0] === '$jet') {
+			if (splitMessage.length === 1) {
+				let auteur = message.author.username;
+				message.delete();
+				var min=1; 
+				var max=100;  
+				var random = Math.floor(Math.random() * (max - min)) + min; 
+				message.channel.send(auteur + ": " + random);
+			}
+			if (splitMessage.length === 2) {
+				let nombre = splitMessage[1];
+				let auteur = message.author.username;
+				message.delete();
+				var min=1; 
+				var max=nombre;  
+				var random = Math.floor(Math.random() * (max - min)) + min; 
+				message.channel.send(auteur + ": " + random);
+			}
 		}
 		
 		if (message.content === '$go') {

@@ -91,7 +91,7 @@ bot.on('message', message => {
 				.setColor("#ff0000")
 				.addField("$help : Affiche la liste des commandes du serveur discord", "Utilisation : $help")
 				.addField("$jet : Faire un jet de dés", "Utilisation : $jet")
-				.addField("$jet10 : Faire un jet de dés de la valeur que vous voulez", "Utilisation : $jet <nombre maximum>")
+				.addField("$jet 10 ou 5 ... : Faire un jet de dés de la valeur que vous voulez", "Utilisation : $jet <nombre maximum>")
 				.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200");
 			message.channel.send(gradesEmbed);
 			message.delete();
@@ -104,7 +104,7 @@ bot.on('message', message => {
 				var min=1; 
 				var max=100;  
 				var random = Math.floor(Math.random() * (max - min)) + min; 
-				message.channel.send(auteur + ": " + random);
+				message.channel.send(auteur + ", jet de " + max +": " + random);
 			}
 			if (splitMessage.length === 2) {
 				let nombre = splitMessage[1];
@@ -113,7 +113,7 @@ bot.on('message', message => {
 				var min=1; 
 				var max=nombre;  
 				var random = Math.floor(Math.random() * (max - min)) + min; 
-				message.channel.send(auteur + ": " + random);
+				message.channel.send(auteur + ", jet de " + max +": " + random);
 			}
 		}
 		

@@ -105,6 +105,15 @@ bot.on('message', message => {
 			message.channel.send(auteur + ": " + random);
 		}
 		
+		if (message.content === '$jet10') {
+			let auteur = message.author.username;
+			message.delete();
+			var min=0; 
+			var max=10;  
+			var random = Math.floor(Math.random() * (max - min)) + min; 
+			message.channel.send(auteur + ": " + random);
+		}
+		
 		if (message.content === '$go') {
 			message.channel.send("https://las-magics.fr/jdr/message.png");
 			message.channel.send("https://las-magics.fr/jdr/carte.png");

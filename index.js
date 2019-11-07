@@ -91,6 +91,7 @@ bot.on('message', message => {
 				.setColor("#ff0000")
 				.addField("$help : Affiche la liste des commandes du serveur discord", "Utilisation : $help")
 				.addField("$jet : Faire un jet de dés", "Utilisation : $jet")
+				.addField("$jet10 : Faire un jet de dés de 10", "Utilisation : $jet10")
 				.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200");
 			message.channel.send(gradesEmbed);
 			message.delete();

@@ -107,7 +107,7 @@ bot.on('message', message => {
 					.addField("$jet : Faire un jet de dés de 100", "Utilisation : $jet")
 					.addField("$jet 10 ou 5 ... : Faire un jet de dés de la valeur que vous voulez", "Utilisation : $jet <nombre maximum>")
 					.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200")
-					.addField("$jet : Lancement du jeu", "Utilisation : $go");
+					.addField("$go : Lancement du jeu", "Utilisation : $go");
 				message.channel.send(gradesEmbed);
 				message.delete();
 			}

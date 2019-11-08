@@ -55,14 +55,13 @@ bot.on('message', message => {
 		}*/
 		
 		if (splitMessage[0] === '$new') {
-			if (splitMessage.length === 8) {
+			if (splitMessage.length === 7) {
 				let name = splitMessage[1];
 				let surname = splitMessage[2];
-				let description = splitMessage[3];
-				let physique = splitMessage[4];
-				let social = splitMessage[5];
-				let mental = splitMessage[6];
-				let dexterite = splitMessage[7];
+				let physique = splitMessage[3];
+				let social = splitMessage[4];
+				let mental = splitMessage[5];
+				let dexterite = splitMessage[6];
 				let newperso = new Discord.RichEmbed()
 					.setColor("#ff0000")
 					.addField(name + " " + surname, "Description: " + description)

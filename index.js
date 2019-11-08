@@ -81,7 +81,7 @@ bot.on('message', message => {
 				}).catch(console.error);
 				message.delete();
 			} else {
-				message.channel.send("Utilisation: $new <name> <surname> <description> <nombre physique> <nombre social> <nombre mental> <nombre dextérité>");
+				message.channel.send("Utilisation: $new <name> <surname> <nombre physique> <nombre social> <nombre mental> <nombre dextérité>");
 			}
 		}
 		
@@ -92,7 +92,7 @@ bot.on('message', message => {
 				.addField("$help : Affiche la liste des commandes du serveur discord", "Utilisation : $help")
 				.addField("$jet : Faire un jet de dés de 100", "Utilisation : $jet")
 				.addField("$jet 10 ou 5 ... : Faire un jet de dés de la valeur que vous voulez", "Utilisation : $jet <nombre maximum>")
-				.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200");
+				.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200");
 			message.channel.send(gradesEmbed);
 			message.delete();
 		}
@@ -106,7 +106,7 @@ bot.on('message', message => {
 					.addField("$help : Affiche la liste des commandes du serveur discord (pour les joueurs)", "Utilisation : $help")
 					.addField("$jet : Faire un jet de dés de 100", "Utilisation : $jet")
 					.addField("$jet 10 ou 5 ... : Faire un jet de dés de la valeur que vous voulez", "Utilisation : $jet <nombre maximum>")
-					.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> <description> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200")
+					.addField("$new : Création de votre personnage", "Utilisation: $new <name> <surname> {<nombre physique> <nombre social> <nombre mental> <nombre dextérité>}<-- Total: 200")
 					.addField("$go : Lancement du jeu", "Utilisation : $go");
 				message.channel.send(gradesEmbed);
 				message.delete();

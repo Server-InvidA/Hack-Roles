@@ -64,7 +64,7 @@ bot.on('message', message => {
 				let dexterite = splitMessage[6];
 				let newperso = new Discord.RichEmbed()
 					.setColor("#ff0000")
-					.addField(name + " " + surname, "Description: " + description)
+					.addField(name, surname)
 					.addField("Physique: " + physique, "Social: " + social)
 					.addField("Mental: " + mental, "Dextérité: " + dexterite);
 				persos.send(newperso);
@@ -72,7 +72,6 @@ bot.on('message', message => {
 				message.author.createDM().then(channel => {
 					channel.send("Vous avez créé le personnage");
 					channel.send("Nom et prénom" + name + " " + surname);
-					channel.send("Description: " + description);
 					channel.send("Physique: " + physique);
 					channel.send("Social: " + social);
 					channel.send("Mental: " + mental);

@@ -8,7 +8,7 @@ const PREFIX = "$";
 //instance
 bot.on('ready', function () {
 	bot.user.setActivity('$help').catch(console.error);
-	bot.user.setStatus("dnd");
+	bot.user.setStatus("idle");
 });
 
 bot.on('message', message => {
